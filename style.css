@@ -1,0 +1,339 @@
+:root {
+/* ------------------------------------------------------------ */
+/*                        User setiing                          */
+/* ------------------------------------------------------------ */
+
+    --clr-rose-800:hsl(332, 51%, 32%);
+    --clr-rose-50:hsl(330, 100%, 98%);
+
+    --clr-stone-900:hsl(24,  5%, 18%);
+    --clr-stone-600:hsl(30, 10%, 34%);
+    --clr-stone-150:hsl(30, 18%, 87%);
+    --clr-stone-100:hsl(30, 54%, 90%);
+
+    --clr-brown-800:hsl(14, 45%, 36%);
+    --clr-white:hsl(0, 0%, 100%);
+
+    --ff-yung-serif:"Young Serif", serif;
+    --ff-outfit:"Outfit", sans-serif;
+
+    --fs-900:clamp(2.25rem, 2.162rem + 0.3756vw, 2.5rem);/*clamp font-size : 36px - 40px on viewport 375px - 1440px*/
+    --fs-800:1.75rem; /*28px*/
+    --fs-700:1.25rem; /*20px*/    
+    --fs-400:1rem;    /*16px*/
+
+    --fw-bold    :700;
+    --fw-semibold:600;
+    --fw-regular :400; 
+}
+
+
+/* ------------------------------------------------------------ */
+/*                         Boilerplate                          */
+/* ------------------------------------------------------------ */
+
+/* set boxsizing */
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+/* resest margin */
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+body{
+    margin: 0;
+}
+
+/* set default image */
+img,
+picture {
+    display: block;
+    width: 100%;
+}
+
+/* Make form elements to work with */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* remove animation for people who' ve turned them off */
+@media(pafers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after{
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+body {
+    min-height: 100dvh;
+    line-height: 1.5;
+    font-family: var(--ff-outfit);
+    font-weight: var(--fw-regular);
+    font-size: var(--fs-400);
+    color: var(--clr-stone-600);
+}
+
+/* ------------------------------------------------------------ */
+/*                        utility classse                       */
+/* ------------------------------------------------------------ */
+
+/* typogarphy */
+
+.ff-yung {
+    font-family: var(--ff-yung-serif);
+}
+
+.ff-outfit {
+    font-family: var(--ff-outfit);
+}
+
+.fs-900, .fs-800, .fs-700{
+    line-height: 1;
+}
+
+.fs-900{
+    font-size: var(--fs-900);
+}
+
+.fs-800{
+    font-size: var(--fs-800);
+}
+
+.fs-700{
+    font-size: var(--fs-700);
+}
+
+.fw-bold{
+    font-weight: var(--fw-bold);
+}
+
+.fw-semibold{
+    font-weight: var(--fw-semibold);
+}
+
+.fw-regular{
+    font-weight: var(--fw-regular);
+}
+
+/* ------------------------------------------------------------ */
+/*                         color                                */
+/* ------------------------------------------------------------ */
+
+.clr-stone-900{
+    color: var(--clr-stone-900);
+}
+
+.clr-stone-600{
+    color: var(--clr-stone-600);
+}
+
+.clr-rose-800{
+    color: var(--clr-rose-800);
+}
+
+.clr-brown-800 {
+    color: var(--clr-brown-800);
+}
+
+.bg-rose-50 {
+    background-color: var(--clr-rose-50);
+    border-radius: 0.75rem; /*12px*/
+    padding: 1.5rem; /*24px*/
+}
+
+/* ------------------------------------------------------------ */
+/*                       card compoment                         */
+/* ------------------------------------------------------------ */
+
+.card {
+    background-color: var(--clr-white);
+    padding-block-end: 2.5rem;
+}
+
+/* style tag image  */
+
+.card .card__img {
+    min-height: 10.625rem; /*170px*/
+    object-fit: cover;
+}
+
+/* spacing */
+
+.card .card__description{
+    padding-inline: 2rem; /*32px*/
+}
+
+.card > * + * {
+    margin-block-start: 2.5rem; /*40px*/
+}
+
+.card .card__description > * + * {
+    margin-block-start: 2rem; /*32px*/
+}
+
+.card .recipe > * + * {
+    margin-block-start: 1.5rem; /*24px*/
+}
+
+.card .preparation > * + *{
+    margin-block-start: 1rem; /*16px*/
+    margin-block-end: 0;
+}
+
+.card .preparation .preparation__list > * + * {
+    margin-block-start: 0.5rem; /*8px*/
+}
+
+.card .preparation .preparation__list {
+    padding-inline-start: 1.5rem; /*24px*/
+}
+
+.card .preparation .preparation__list li {
+    padding-inline-start: 1rem; /*16px*/
+}
+
+.card .ingredients{
+    /* style line bottom on ingredients */
+    padding-block-end: 2rem;
+    border-bottom: 1px solid var(--clr-stone-150);
+}
+
+.card .ingredients > * + * {
+    margin-block-start: 1.5rem; /*24px*/
+    margin-block-end: 0; 
+}
+
+.card .ingredients .ingredients__list > * + * {
+    margin-block-start: 0.5rem; /*8px*/
+}
+
+.card .ingredients .ingredients__list {
+    padding-inline-start: 1.5rem; /*24px*/
+}
+
+.card .ingredients .ingredients__list li {
+    padding-inline-start: 1rem; /*16px*/
+}
+
+.card .instructions{
+    /* style line bottom on instructions */
+    padding-block-end: 2rem;
+    border-bottom: 1px solid var(--clr-stone-150);
+}
+
+.card .instructions > * + * {
+    margin-block-start: 1.5rem; /*24px*/
+    margin-block-end: 0;
+}
+
+.card .instructions .instructions__list > * + * {
+    margin-block-start: 0.5rem; /*8px*/
+} 
+
+.card .instructions .instructions__list {
+    padding-inline-start: 1.5rem; /*24px*/
+}
+
+.card .instructions .instructions__list li {
+    padding-inline-start: 1rem; /*16px*/
+}
+
+.card .nutrition > * + * {
+    margin-block-start: 1.5rem; /*24px*/
+}
+
+/* style ul li::maker  */
+
+.card .preparation .preparation__list > li::marker{
+    color: var(--clr-rose-800);
+}
+
+.card .ingredients .ingredients__list > li::marker{
+    color: var(--clr-brown-800);
+}
+
+.card .instructions .instructions__list > li::marker{
+    color: var(--clr-brown-800);
+    font-weight: var(--fw-bold);
+}
+
+/*  table on nutrition__table box */
+
+.card .nutrition__table {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.card .nutrition__table > :first-child > p {
+    padding-inline-start: 2rem; /*32px*/
+}
+
+.card .nutrition__table .nutrition__column > *:not(:last-child){
+    border-bottom: 1px solid var(--clr-stone-150);
+}
+
+.card .nutrition__table .nutrition__column > :nth-child(1n + 1):not(:first-child, :last-child){
+    padding-block-start: 0.75rem; /*12px*/
+    padding-block-end: 0.75rem; /*12px*/
+}
+
+.card .nutrition__table .nutrition__column > :first-child {
+    padding-block-end: 0.75rem; /*12px*/
+}
+
+.card .nutrition__table .nutrition__column > :last-child {
+    padding-block-start: 0.75rem; /*12px*/
+}
+
+/* ------------------------------------------------------------ */
+/*                      viewport 768px                          */
+/* ------------------------------------------------------------ */
+
+@media (min-width: calc(16rem * 3)) {
+    body{
+        background-color: var(--clr-stone-100);
+        padding-block: 8rem; /*128px*/
+    }
+
+    .card {
+        max-width: 38.5rem; /*616px*/
+        margin-inline: auto; 
+        border-radius: 1.5rem; /*24px*/
+        padding-block: 2.5rem ; /*40px*/
+    }
+    
+    .card .card__img{
+        border-radius: 0.75rem; /*12px*/ 
+        height: 18.75rem;       /*300px*/
+        width: min(100% - 5rem, 50rem); /* max-width : 800px*/
+        margin-inline: auto;
+    }
+
+    .card .card__description{
+        padding-inline: 2.5rem;
+    } 
+    
+}
+
+/* ------------------------------------------------------------ */
+/*                     viewport 1024px                          */
+/* ------------------------------------------------------------ */
+
+@media (min-width: calc(16rem * 4)) {
+    .card {
+        max-width: 46rem; /*736px*/
+    }
+}
